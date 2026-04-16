@@ -1,15 +1,23 @@
+/* === Base Layout === */
 body {
   margin: 0;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
+  font-family: system-ui, sans-serif;
+  background: #f5f7fa;
+  color: #1a1a1a;
 }
 
 h1 {
   text-align: center;
+  margin: 2rem 0 1rem;
+  color: #4C6898;
+  font-weight: 700;
 }
 
 main {
   display: grid;
-  gap: 1rem;
+  gap: 2rem;
+  padding-bottom: 3rem;
 }
 
 @media (width >= 600px) {
@@ -18,38 +26,124 @@ main {
   }
 }
 
+/* === Upcoming Parties Box === */
+.parties-box {
+  background: white;
+  border: 0.1rem solid #d0d4dc;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+}
+
+.parties-box h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #4C6898;
+  font-weight: 600;
+}
+
+/* === Party List === */
 .parties {
   display: grid;
-  gap: 1ch;
+  gap: 1rem;
   padding-left: 0;
-  list-style-type: none;
+  list-style: none;
+}
+
+.parties li {
+  border-radius: 0.5rem;
 }
 
 .parties a {
   display: block;
-  border: 1px solid #ccc;
-  border-radius: 0.25rem;
-  padding: 1ch;
+  padding: 1rem;
+  border: 0.1rem solid #d0d4dc;
+  border-radius: 0.5rem;
+  background: #ffffff;
   text-decoration: none;
-  color: black;
+  color: #1a1a1a;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
 }
 
 .parties a:hover {
-  background: #eee;
-  font-style: italic;
+  background: #e8ecf5;
+  border-color: #4C6898;
+  transform: translateY(-0.1rem);
 }
 
-.parties li.selected {
-  font-weight: bold;
-  font-style: italic;
+.parties li.selected a {
+  background: #dfe6f3;
+  border-color: #4C6898;
+  font-weight: 600;
 }
 
+/* === Form === */
 form {
   display: grid;
-  gap: 1ch;
-  padding: 0 1rem;
+  gap: 1rem;
+  padding: 1.5rem;
+  border: 0.1rem solid #d0d4dc;
+  border-radius: 0.75rem;
+  background: white;
 }
 
 label {
   display: grid;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+input,
+textarea {
+  padding: 0.75rem;
+  border: 0.1rem solid #c7ccd6;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background: #fafbfc;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #4C6898;
+  background: white;
+}
+
+button {
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: #4C6898;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: #3b5277;
+}
+
+/* === Selected Party Section === */
+#selected section {
+  padding: 1.5rem;
+  border: 0.1rem solid #d0d4dc;
+  border-radius: 0.75rem;
+  background: white;
+}
+
+#selected h3 {
+  margin-top: 0;
+  color: #4C6898;
+}
+
+#selected time,
+#selected address,
+#selected p {
+  margin: 0.5rem 0;
+}
+
+#selected ul {
+  padding-left: 1rem;
+  margin-top: 1rem;
 }
